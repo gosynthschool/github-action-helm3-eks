@@ -1,0 +1,15 @@
+name: 'Helm 3'
+description: 'Helm 3'
+branding:
+  icon: 'compass'
+  color: 'blue'
+inputs:
+  exec:
+    description: 'The full helm command to run (including helm)'
+    required: true
+  kubeconfig:
+    description: 'The full helm command to run (including helm)'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
