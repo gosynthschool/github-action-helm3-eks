@@ -2,6 +2,8 @@
 
 set -e
 
+if [ -z "$INPUT_KUBECONFIG" ]; then
+
 if [ -z "$INPUT_AWS_ACCESS_KEY_ID" ]; then
   echo "INPUT_AWS_ACCESS_KEY_ID is not set. Quitting."
   exit 1
@@ -19,6 +21,8 @@ fi
 # Default to us-east-1 if AWS_REGION not set.
 if [ -z "$INPUT_AWS_REGION" ]; then
   AWS_REGION="us-east-2"
+fi
+
 fi
 
 # Create a dedicated profile for this action to avoid conflicts
