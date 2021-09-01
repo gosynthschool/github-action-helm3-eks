@@ -5,11 +5,15 @@ set -e
 if [ -z "$INPUT_AWS_ACCESS_KEY_ID" ]; then
   echo "INPUT_AWS_ACCESS_KEY_ID is not set. Quitting."
   exit 1
+else
+INPUT_AWS_ACCESS_KEY_ID=$(echo "${INPUT_AWS_ACCESS_KEY_ID}" | xargs)
 fi
 
 if [ -z "$INPUT_AWS_SECRET_ACCESS_KEY" ]; then
   echo "INPUT_AWS_SECRET_ACCESS_KEY is not set. Quitting."
   exit 1
+else
+INPUT_AWS_SECRET_ACCESS_KEY=$(echo "${INPUT_AWS_SECRET_ACCESS_KEY}" | xargs)
 fi
 
 # Default to us-east-1 if AWS_REGION not set.
