@@ -84,6 +84,13 @@ jobs:
           exec: helm lint ./.helm/app/
 ```
 
+To deploy try this:
+
+```bash
+git tag -a -m "v2" v2
+git push --follow-tags
+```
+
 ## License ##
 
 Copyright 2020 [Cees-Jan Kiewiet](http://wyrihaximus.net/)
