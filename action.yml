@@ -10,19 +10,19 @@ inputs:
   kubeconfig:
     description: 'The full helm command to run (including helm)'
     required: false
-  aws-access-key-id:
+  aws_access_key_id:
     description: >-
       AWS Access Key ID. This input is required if running in the GitHub hosted environment.
       It is optional if running in a self-hosted environment that already has AWS credentials,
       for example on an EC2 instance.
     required: false
-  aws-secret-access-key:
+  aws_secret_access_key:
     description: >-
       AWS Secret Access Key. This input is required if running in the GitHub hosted environment.
       It is optional if running in a self-hosted environment that already has AWS credentials,
       for example on an EC2 instance.
     required: false
-  aws-region:
+  aws_region:
     description: 'AWS Region, e.g. us-east-2'
     required: true
 runs:
