@@ -3,6 +3,8 @@
 set -e
 
 if [ -z "$INPUT_KUBECONFIG" ]; then
+    echo "INPUT_KUBECONFIG is not set. EKS will not be called."
+else
 
 if [ -z "$INPUT_AWS_ACCESS_KEY_ID" ]; then
   echo "INPUT_AWS_ACCESS_KEY_ID is not set. Quitting."
