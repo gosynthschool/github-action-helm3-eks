@@ -23,8 +23,6 @@ if [ -z "$INPUT_AWS_REGION" ]; then
   AWS_REGION="us-east-2"
 fi
 
-fi
-
 # Create a dedicated profile for this action to avoid conflicts
 # with past/future actions.
 aws configure --profile github_user <<-EOF > /dev/null 2>&1
@@ -37,6 +35,8 @@ EOF
 echo -e "\033[36mSetting up kubectl configuration\033[0m"
 mkdir -p ~/.kube/
 echo "${INPUT_KUBECONFIG}" > ~/.kube/config
+
+fi
 
 echo -e "\033[36mPreparing helm execution\033[0m"
 echo "${INPUT_EXEC}" > run.sh
