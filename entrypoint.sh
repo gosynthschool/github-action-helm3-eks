@@ -52,6 +52,9 @@ helm_output="${helm_output//'%'/'%25'}"
 helm_output="${helm_output//$'\n'/'%0A'}"
 helm_output="${helm_output//$'\r'/'%0D'}"
 
+mkdir -p _temp
+echo "$helm_output" > ./_temp/helm_output
+
 echo "::set-output name=helm_output::$helm_output"
 
 echo -e "\033[36mCleaning up: \033[0m"
