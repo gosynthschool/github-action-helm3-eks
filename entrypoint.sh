@@ -47,13 +47,12 @@ chmod +x ./run.sh
 echo -e "\033[36mExecuting helm\033[0m"
 helm_output=$(./run.sh)
 echo "$helm_output"
+mkdir -p _temp
+echo "$helm_output" > ./_temp/helm_output
 
 helm_output="${helm_output//'%'/'%25'}"
 helm_output="${helm_output//$'\n'/'%0A'}"
 helm_output="${helm_output//$'\r'/'%0D'}"
-
-mkdir -p _temp
-echo "$helm_output" > ./_temp/helm_output
 
 echo "::set-output name=helm_output::$helm_output"
 
