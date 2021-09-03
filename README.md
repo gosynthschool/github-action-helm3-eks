@@ -87,7 +87,9 @@ jobs:
 To deploy try this:
 
 ```bash
-git tag -a -m "v2" v2
+git tag -d v1
+git push origin :v1
+git tag -a -m "v1" v1
 git push --follow-tags
 ```
 

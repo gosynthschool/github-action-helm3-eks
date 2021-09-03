@@ -48,7 +48,7 @@ echo -e "\033[36mExecuting helm\033[0m"
 helm_output=$(./run.sh)
 echo "$helm_output"
 mkdir -p _temp
-printf "# Helm Results\n\n\`\`\`bash\n%s\n\`\`\`" $helm_output > ./_temp/helm_output
+printf "# Helm Results\n\n\`\`\`bash\n$helm_output\n\`\`\`" > ./_temp/helm_output
 
 helm_output="${helm_output//'%'/'%25'}"
 helm_output="${helm_output//$'\n'/'%0A'}"
