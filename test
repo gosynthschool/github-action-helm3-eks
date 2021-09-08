@@ -1,3 +1,0 @@
-test
-We are updating a file on a branch that matches a TicketId and Team on Notion.
-Github sends a webhook to our EKS cluster and updates the status.
