@@ -8,7 +8,7 @@ inputs:
     description: 'The full helm command to run (including helm)'
     required: true
   kubeconfig:
-    description: 'The full helm command to run (including helm)'
+    description: 'The full kubeconfig'
     required: false
   aws_access_key_id:
     description: >-
