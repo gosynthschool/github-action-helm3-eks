@@ -14,7 +14,7 @@ RUN apk --no-cache add \
     && curl -sLO https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VER}/glibc-${GLIBC_VER}.apk \
     && curl -sLO https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VER}/glibc-bin-${GLIBC_VER}.apk \
     && curl -sLO https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VER}/glibc-i18n-${GLIBC_VER}.apk \
-    && curl -L -o helmfile_linux_amd64 https://github.com/roboll/helmfile/releases/download/v${HELMFILE_VERSION}/helmfile_linux_amd64 \
+    && curl -sL -o helmfile_linux_amd64 https://github.com/roboll/helmfile/releases/download/v${HELMFILE_VERSION}/helmfile_linux_amd64 \
     && apk add --no-cache \
         glibc-${GLIBC_VER}.apk \
         glibc-bin-${GLIBC_VER}.apk \
@@ -24,7 +24,7 @@ RUN apk --no-cache add \
     && unzip awscliv2.zip \
     && aws/install \
     && mv helmfile_linux_amd64 /usr/local/bin/helmfile \
-    && chmod +x /usr/bin/helmfile \
+    && chmod +x /usr/local/bin/helmfile \
     && rm -rf \
         awscliv2.zip \
         aws \
