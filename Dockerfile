@@ -40,6 +40,11 @@ RUN apk --no-cache add \
 
 RUN  /usr/local/bin/aws --version
 
+RUN helm plugin install https://github.com/databus23/helm-diff --version v3.1.3 && \
+    helm plugin install https://github.com/jkroepke/helm-secrets --version v3.5.0 && \
+    helm plugin install https://github.com/hypnoglow/helm-s3.git --version v0.10.0 && \
+    helm plugin install https://github.com/aslafy-z/helm-git.git --version v0.10.0
+
 RUN mkdir /workdir
 COPY entrypoint.sh /workdir/entrypoint.sh
 RUN chmod +x /workdir/entrypoint.sh
