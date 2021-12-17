@@ -24,7 +24,7 @@ RUN apk --no-cache add \
     && unzip awscliv2.zip \
     && aws/install \
     && mv helmfile_linux_amd64 /usr/local/bin/helmfile \
-    && chmod +x /usr/bin/helmfile \
+    && chmod +x /usr/local/bin/helmfile \
     && rm -rf \
         awscliv2.zip \
         aws \
