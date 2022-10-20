@@ -1,5 +1,5 @@
-FROM alpine/helm:3.4.1 AS runtime
-ARG HELMFILE_VERSION=0.141.0
+FROM alpine/helm:3.10.1 AS runtime
+ARG HELMFILE_VERSION=0.144.0
 # hadolint ignore=DL3002
 USER root
 
@@ -40,10 +40,10 @@ RUN apk --no-cache add \
 
 RUN  /usr/local/bin/aws --version
 
-RUN helm plugin install https://github.com/databus23/helm-diff --version v3.1.3 && \
-    helm plugin install https://github.com/jkroepke/helm-secrets --version v3.5.0 && \
-    helm plugin install https://github.com/hypnoglow/helm-s3.git --version v0.10.0 && \
-    helm plugin install https://github.com/aslafy-z/helm-git.git --version v0.10.0
+RUN helm plugin install https://github.com/databus23/helm-diff --version v3.6.0 && \
+    helm plugin install https://github.com/jkroepke/helm-secrets --version v4.1.1 && \
+    helm plugin install https://github.com/hypnoglow/helm-s3.git --version v0.14.0 && \
+    helm plugin install https://github.com/aslafy-z/helm-git.git --version v0.13.0
 
 RUN mkdir /workdir
 COPY entrypoint.sh /workdir/entrypoint.sh
