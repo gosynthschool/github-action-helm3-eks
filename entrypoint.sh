@@ -45,7 +45,7 @@ echo "${INPUT_EXEC}" > run.sh
 chmod +x ./run.sh
 
 if [ -z "$INPUT_LOG_URL" ]; then
-    echo "No logs configured."
+    echo -e "\033[36mNo logs configured.\033[0m"
 else
     echo -e "\033[35mDeployment logs: ${INPUT_LOG_URL}\033[0m"
 fi

@@ -1,3 +1,8 @@
+git tag -d v3.1
+git push --delete origin v3.1
+git tag v3.1
+git push origin v3.1
+
 git tag -d v3
 git push --delete origin v3
 git tag v3
