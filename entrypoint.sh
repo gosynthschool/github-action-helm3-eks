@@ -44,6 +44,12 @@ echo -e "\033[36mPreparing helm execution\033[0m"
 echo "${INPUT_EXEC}" > run.sh
 chmod +x ./run.sh
 
+if [ -z "$INPUT_LOG_URL" ]; then
+    echo "No logs configured."
+else
+    echo -e "\033[35mDeployment logs: ${INPUT_LOG_URL}\033[0m"
+fi
+
 echo -e "\033[36mExecuting helm\033[0m"
 helm_output=$(./run.sh)
 echo "$helm_output"

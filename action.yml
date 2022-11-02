@@ -25,6 +25,9 @@ inputs:
   aws_region:
     description: 'AWS Region, e.g. us-east-2'
     required: true
+  log_url:
+    description: 'URL to deployment logs'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
