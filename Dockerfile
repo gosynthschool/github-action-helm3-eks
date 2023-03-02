@@ -20,7 +20,7 @@ RUN apk --no-cache add \
     glibc-bin-${GLIBC_VER}.apk \
     glibc-i18n-${GLIBC_VER}.apk \
     && /usr/glibc-compat/bin/localedef -i en_US -f UTF-8 en_US.UTF-8 \
-    && curl -sL "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.0.30.zip" -o "awscliv2.zip" \
+    && curl -sL "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.10.3.zip" -o "awscliv2.zip" \
     && unzip awscliv2.zip \
     && aws/install \
     && mv helmfile_linux_amd64 /usr/local/bin/helmfile \
