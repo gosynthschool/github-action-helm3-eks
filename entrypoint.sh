@@ -45,6 +45,15 @@ echo "${INPUT_EXEC}" > run.sh
 chmod +x ./run.sh
 
 echo -e "\033[36mExecuting helm\033[0m"
+
+# In case INPUT_EXEC includes git commands, the user/group info may mismatch
+# between container and host, and it may cause git to complain with:
+# `detected dubious ownership in repository`.
+# Therefore mark everything as safe here as we don't know where the repository is,
+# (although it is likely /github/workspace)
+# For more info: https://github.com/actions/runner-images/issues/6775
+git config --global --add safe.directory '*'
+
 helm_output=$(./run.sh)
 echo "$helm_output"
 mkdir -p _temp
