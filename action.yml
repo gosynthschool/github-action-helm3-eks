@@ -24,7 +24,7 @@ inputs:
     required: false
   aws_region:
     description: 'AWS Region, e.g. us-east-2'
-    required: true
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
